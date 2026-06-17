@@ -1,0 +1,368 @@
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  --accent: #58a6ff;
+  --correct: #3fb950;
+  --error: #f85149;
+  --error-bg: rgba(248, 81, 73, 0.15);
+  --border: #30363d;
+  --danger: #f85149;
+  --danger-hover: #da3633;
+  --btn-primary-bg: #238636;
+  --btn-primary-hover: #2ea043;
+  --btn-secondary-bg: #21262d;
+  --btn-secondary-hover: #30363d;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans",
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 56px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo:hover {
+  color: var(--accent);
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav__link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: 0.15s;
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.nav__link--active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.lang-switch {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+}
+
+.lang-switch__btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  transition: 0.15s;
+}
+
+.lang-switch__btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+
+.lang-switch__btn:not([aria-pressed="true"]):hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.15s;
+}
+
+.btn--primary {
+  background: var(--btn-primary-bg);
+  border-color: var(--btn-primary-bg);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+.btn--secondary {
+  background: var(--btn-secondary-bg);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.btn--secondary:hover {
+  background: var(--btn-secondary-hover);
+}
+
+.btn--danger {
+  background: transparent;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn--danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.stats-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.stats__title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.stats__best,
+.stats__age,
+.stats__chart,
+.stats__history {
+  margin-bottom: 32px;
+}
+
+.stats__best h2,
+.stats__age h2,
+.stats__chart h2,
+.stats__history h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.best-result {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.best-result span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.age-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.age-input {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 14px;
+  width: 140px;
+}
+
+.age-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.age-evaluation {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.age-evaluation__level {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.age-evaluation__comparison {
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.age-evaluation__comment {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.chart-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.chart {
+  width: 100%;
+  height: auto;
+}
+
+.chart line,
+.chart path {
+  stroke: var(--border);
+}
+
+.chart text {
+  fill: var(--text-secondary);
+  font-size: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.history-table th,
+.history-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.history-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.history-table td {
+  color: var(--text-primary);
+}
+
+.history-table tr:hover td {
+  background: var(--bg-tertiary);
+}
+
+.history-table .quote-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history__actions {
+  margin-top: 16px;
+}
+
+.mobile-warning {
+  display: none;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+@media (max-width: 640px) {
+  .header__inner {
+    gap: 12px;
+  }
+
+  .mobile-warning {
+    display: block;
+  }
+
+  .history-table th:nth-child(3),
+  .history-table td:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .lang-switch__btn {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}

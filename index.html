@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tututype — тренажер скорости печати</title>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/test.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Ту-Ту-Тайп!</a>
+      <nav class="nav">
+        <a href="stats.html" class="nav__link">Статистика</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="lang-switch__btn" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="test-container">
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric__label">CPM</span>
+          <span class="metric__value" id="cpm-current">0</span>
+        </div>
+        <div class="metric metric--prev">
+          <span class="metric__label">прошлый раз</span>
+          <span class="metric__value metric__value--prev" id="cpm-prev">—</span>
+        </div>
+        <div class="metric">
+          <span class="metric__label">Accuracy</span>
+          <span class="metric__value" id="accuracy">100%</span>
+        </div>
+        <div class="metric">
+          <span class="metric__label">Время</span>
+          <span class="metric__value" id="timer">00:00</span>
+        </div>
+      </div>
+
+      <div class="quote" id="quote"></div>
+
+      <input class="hidden-input" id="hidden-input" type="text" autofocus>
+
+      <div class="results" id="results" hidden>
+        <h2 class="results__title">Результат</h2>
+        <div class="results__grid">
+          <div class="results__item">
+            <span class="results__label">CPM</span>
+            <span class="results__value" id="result-cpm">0</span>
+          </div>
+          <div class="results__item">
+            <span class="results__label">Accuracy</span>
+            <span class="results__value" id="result-accuracy">0%</span>
+          </div>
+          <div class="results__item">
+            <span class="results__label">Время</span>
+            <span class="results__value" id="result-time">00:00</span>
+          </div>
+          <div class="results__item">
+            <span class="results__label">Ошибки</span>
+            <span class="results__value" id="result-errors">0</span>
+          </div>
+        </div>
+        <div class="results__actions">
+          <button class="btn btn--secondary" id="btn-retry">Попробовать снова</button>
+          <button class="btn btn--primary" id="btn-new">Новая цитата</button>
+        </div>
+      </div>
+
+      <div class="mobile-warning">
+        Клавиатурный тренажер лучше работает на компьютере
+      </div>
+    </div>
+  </main>
+
+  <script src="data/quotes-ru.js"></script>
+  <script src="data/quotes-en.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/test.js"></script>
+</body>
+</html>

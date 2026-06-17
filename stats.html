@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Статистика — tututype</title>
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Ту-Ту-Тайп!</a>
+      <nav class="nav">
+        <a href="stats.html" class="nav__link nav__link--active">Статистика</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="lang-switch__btn" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="stats-container">
+      <h1 class="stats__title">Статистика</h1>
+
+      <section class="stats__best">
+        <h2>Лучший результат</h2>
+        <div id="best-result" class="best-result">—</div>
+      </section>
+
+      <section class="stats__age">
+        <h2>Ваш возраст</h2>
+        <div class="age-form">
+          <input type="number" id="age-input" class="age-input" placeholder="Сколько вам лет?" min="1" max="120">
+          <button class="btn btn--primary" id="age-submit">Оценить</button>
+        </div>
+        <div id="age-evaluation" class="age-evaluation" hidden></div>
+      </section>
+
+      <section class="stats__chart">
+        <h2>Прогресс CPM (последние 20)</h2>
+        <div class="chart-wrapper">
+          <svg id="cpm-chart" class="chart" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+      </section>
+
+      <section class="stats__history">
+        <h2>История</h2>
+        <div class="table-wrapper">
+          <table class="history-table" id="history-table">
+            <thead>
+              <tr>
+                <th>Дата</th>
+                <th>Язык</th>
+                <th>Цитата</th>
+                <th>CPM</th>
+                <th>Accuracy</th>
+                <th>Время</th>
+              </tr>
+            </thead>
+            <tbody id="history-body"></tbody>
+          </table>
+        </div>
+        <div class="history__actions">
+          <button class="btn btn--danger" id="btn-clear-history">Очистить историю</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/stats.js"></script>
+</body>
+</html>
