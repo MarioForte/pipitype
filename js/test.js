@@ -180,8 +180,8 @@
     if (!chars[currentIndex]) return;
 
     var expected = chars[currentIndex]["char"];
-    var chNorm = ch.replace(/-/g, "\u2014");
-    var expNorm = expected.replace(/-/g, "\u2014");
+    var chNorm = ch.replace(/-/g, "\u2014").replace(/[ёЁ]/g, function (m) { return m == "ё" ? "е" : "Е" });
+    var expNorm = expected.replace(/-/g, "\u2014").replace(/[ёЁ]/g, function (m) { return m == "ё" ? "е" : "Е" });
     var isCorrect = chNorm == expNorm;
 
     chars[currentIndex].el.classList.remove("quote__char--current");
