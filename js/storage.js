@@ -1,7 +1,7 @@
 const Storage = {
   KEYS: {
-    RESULTS: "tututype_results",
-    LANGUAGE: "tututype_language",
+    RESULTS: "pipitype_results",
+    LANGUAGE: "pipitype_language",
   },
 
   saveResult(result) {
