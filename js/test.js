@@ -180,7 +180,9 @@
     if (!chars[currentIndex]) return;
 
     var expected = chars[currentIndex]["char"];
-    var isCorrect = ch == expected;
+    var chNorm = ch.replace(/-/g, "\u2014");
+    var expNorm = expected.replace(/-/g, "\u2014");
+    var isCorrect = chNorm == expNorm;
 
     chars[currentIndex].el.classList.remove("quote__char--current");
     if (isCorrect) {
