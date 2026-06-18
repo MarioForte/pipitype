@@ -10,7 +10,7 @@
   const resultAccuracy = document.getElementById("result-accuracy");
   const resultTime = document.getElementById("result-time");
   const resultErrors = document.getElementById("result-errors");
-  const btnRetry = document.getElementById("btn-retry");
+  const btnStats = document.getElementById("btn-stats");
   const btnNew = document.getElementById("btn-new");
   const langBtns = document.querySelectorAll(".lang-switch__btn");
 
@@ -251,8 +251,8 @@
     hiddenInput.focus();
   });
 
-  btnRetry.addEventListener("click", function () {
-    renderQuote(currentQuote);
+  btnStats.addEventListener("click", function () {
+    window.location.href = "stats.html";
   });
 
   btnNew.addEventListener("click", resetTest);

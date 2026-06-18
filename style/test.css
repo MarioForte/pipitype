@@ -150,6 +150,11 @@
   justify-content: center;
 }
 
+.results__actions .btn--large {
+  padding: 14px 32px;
+  font-size: 1.0625rem;
+}
+
 @media (max-width: 560px) {
   .metrics {
     gap: 16px;
