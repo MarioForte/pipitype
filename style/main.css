@@ -341,11 +341,6 @@ body {
   margin-top: 24px;
 }
 
-@media (max-width: 640px) {
-  .header__inner {
-    gap: 12px;
-  }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -357,6 +352,11 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
+
+@media (max-width: 640px) {
+  .header__inner {
+    gap: 12px;
+  }
 
 .mobile-warning {
     display: block;
